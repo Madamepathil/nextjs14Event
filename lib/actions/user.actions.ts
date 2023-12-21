@@ -1,12 +1,12 @@
 'use server'
 
 import { CreateUserParams, UpdateUserParams } from "@/types"
-import { handleError } from "../utils"
-import dbConnect from "../mongodb/database"
-import User from "../mongodb/database/models/user.model"
-import Event from "../mongodb/database/models/event.model"
+import { handleError } from "@/lib/utils"
+import dbConnect from '@/lib/mongodb/database/index'
+import User from '@/lib/mongodb/database/models/user.model'
+import Order from '@/lib/mongodb/database/models/order.model'
+import Event from '@/lib/mongodb/database/models/event.model'
 import { revalidatePath } from "next/cache"
-import Order from "../mongodb/database/models/order.model"
 
 export const createUser = async (user: CreateUserParams) => {
     try {
